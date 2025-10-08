@@ -1,0 +1,21 @@
+# create/update .gitignore (project root)
+cat > .gitignore << 'EOF'
+node_modules/
+dist/
+.vscode/
+.env
+.DS_Store
+*.tsbuildinfo
+EOF
+
+# check what's tracked now
+git status
+
+# stage everything that isn't ignored (this includes src/, vite.config.js, package-lock.json)
+git add -A
+
+# commit
+git commit -m "Prototype updates: WA template-only compose, wizard back button, scheduler tweaks, active toggles, remove Reporting route"
+
+# push to GitHub
+git push origin main
